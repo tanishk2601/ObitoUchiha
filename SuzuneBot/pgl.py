@@ -1,10 +1,10 @@
 from telethon import events
-from SuzuneBot import telethn
+from VanitasBot import telethn
 
 """Triggers start command in pm and in groupchats"""
 
 
-def SuzuneBot(**args):
+def VanitasBot(**args):
     """New message."""
     pattern = args.get("pattern", None)
     r_pattern = r"^[/!]"
