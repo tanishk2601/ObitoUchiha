@@ -2,8 +2,8 @@ import random
 import threading
 from typing import Union
 
-from SuzuneBot.modules.helper_funcs.msg_types import Types
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot.modules.helper_funcs.msg_types import Types
+from VanitasBot.modules.sql import BASE, SESSION
 from sqlalchemy import BigInteger, Boolean, Column, Integer, String, UnicodeText
 
 DEFAULT_WELCOME = "Hey {first}, how are you?"
