@@ -94,7 +94,7 @@ if ENV:
         raise Exception("Your blacklisted chats list does not contain valid integers.")
 
 else:
-    from SuzuneBot.config import Development as Config
+    from VanitasBot.config import Development as Config
 
     TOKEN = Config.TOKEN
 
@@ -172,8 +172,8 @@ else:
         LOGGER.warning("Can't connect to SpamWatch!")
 
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
-telethn = TelegramClient("SuzuneBot", API_ID, API_HASH)
-pgram = Client("SuzuneBot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
+telethn = TelegramClient("VanitasBot", API_ID, API_HASH)
+pgram = Client("VanitasBot", api_id=API_ID, api_hash=API_HASH, bot_token=TOKEN)
 dispatcher = updater.dispatcher
 
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
@@ -183,7 +183,7 @@ DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
 
 # Load at end to ensure all prev variables have been set
-from SuzuneBot.modules.helper_funcs.handlers import (
+from VanitasBot.modules.helper_funcs.handlers import (
     CustomCommandHandler,
     CustomMessageHandler,
     CustomRegexHandler,
