@@ -24,9 +24,9 @@ from SuzuneBot import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from SuzuneBot.modules import ALL_MODULES
-from SuzuneBot.modules.helper_funcs.chat_status import is_user_admin
-from SuzuneBot.modules.helper_funcs.misc import paginate_modules
+from VanitasBot.modules import ALL_MODULES
+from VanitasBot.modules.helper_funcs.chat_status import is_user_admin
+from VanitasBot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -75,34 +75,33 @@ def get_readable_time(seconds: int) -> str:
 PM_START_TEXT = """
 * Hello {} ♡︎ !*
 ════════════════════════════
-• I'Aᴍ [「𝐒ᴜᴢᴜɴᴇ 𝐇ᴏʀɪᴋɪᴛᴀ」](https://telegra.ph/file/9cd0b9c94262fe74aae07.jpg)
-• 𝕿𝖍𝖊 𝕮𝖑𝖆𝖘𝖘 𝕽𝖔𝖔𝖒 𝕺𝖋 𝕰𝖑𝖎𝖙𝖊
-• *Aᴍ Vᴇʀʏ Fᴀꜱᴛ Aɴᴅ Mᴏʀᴇ Eꜰꜰɪᴄɪᴇɴᴛ | Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Fᴇᴀᴛᴜʀᴇꜱ!*
-════════════════════════════
+• I'Aᴍ [「𝐒ᴜᴢᴜɴᴇ 𝐇ᴏʀɪᴋɪᴛᴀ」](https://telegra.ph/file/b5e18ce718eb14bdd8ae6.jpg)
+• 𝐓ʜᴇ 𝐒ᴛᴜᴅʏ 𝐂ᴀsᴇ 𝐎ғ 𝐕ᴀɴɪᴛᴀs             
+• *𝐀ᴍ 𝐓ʜᴇ 𝐕ᴀᴍᴘɪʀᴇ 𝐎ғ 𝐓ʜᴇ 𝐁ʟᴜᴇ 𝐌ᴏᴏɴ | Pʀᴏᴠɪᴅᴇ Aᴡᴇꜱᴏᴍᴇ Mᴀɢɪᴄ Oғ Bᴏᴏᴋ Oғ Vᴀɴɪᴛᴀs!*
+══════════════════════════
 × *Uᴘᴛɪᴍᴇ:* {}
 """
 
-G_START_TEXT = """
-Hello Suzune Is Here.
+G_START_TEXT = """            
+Hello Vanitas Is Here.
 Uptime - {}!
 """
 
 HELP_STRINGS = """
 Hello My name is *{}*.
-Here's The Settings Of This Bot[.](https://telegra.ph/file/3f5b509b1ebf57ecba47d.jpg)
+Here's The Settings Of This Bot[.](https://telegra.ph/file/bac00baf97d12fad5ee75.jpg)
 
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-SuzuneBot_IMG = "https://telegra.ph/file/a3868caeaf1b3e55ccc90.jpg"
-
-SuzuneBotG_IMG = "https://telegra.ph/file/819b0d3b4d55636d19f59.jpg"
+VanitasBot_IMG = "https://telegra.ph/file/c7ed924047c5e1de8be87.jpg"
+VanitasBotG_IMG = "https://telegra.ph/file/b9374c8526252fca54664.jpg"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting [Nobita](https://t.me/TheNobita).
- Those who cannot provide monetary support are welcome to help us develop the bot at @VegaCodes.
+ You can support the project by contacting [Zent](https://t.me/xD_Zent).
+ Those who cannot provide monetary support are welcome to help us develop the bot at @AnimeChatAura.
  """
 
 IMPORTED = {}
@@ -116,7 +115,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("SuzuneBot.modules." + module_name)
+    imported_module = importlib.import_module("VanitasBot.modules." + module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
 
@@ -210,7 +209,7 @@ def start(update: Update, context: CallbackContext):
         else:
             first_name = update.effective_user.first_name
             update.effective_message.reply_photo(
-                SuzuneBot_IMG,
+                VanitasBot_IMG,
                 PM_START_TEXT.format(
                     escape_markdown(first_name), escape_markdown(context.bot.first_name)
                 ),
@@ -220,10 +219,10 @@ def start(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="➕ᴀᴅᴅ 𝐒ᴜᴢᴜɴᴇ Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ️➕️",
-                                url="t.me/Suzune_Superbot?startgroup=true".format(
+                                text="➕ᴀᴅᴅ 𝐕ᴀɴɪᴛᴀs Tᴏ Yᴏᴜʀ Gʀᴏᴜᴘ️➕️",
+                                url="t.me/VanitasXBot?startgroup=true".format(
                                     context.bot.username
-                                ),
+                                ),             
                             ),
                         ],
                         [
@@ -233,13 +232,13 @@ def start(update: Update, context: CallbackContext):
                             ),
                             InlineKeyboardButton(
                                 text="ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ️",
-                                url="https://t.me/SuzuneSuperbot",
+                                url="https://t.me/VanitasXBot",
                             ),
                         ],
                         [
                             InlineKeyboardButton(
-                                text="Owner",
-                                url="https://t.me/TheVenomXD",
+                                text="𝐕ᴀɴɪᴛᴀs",
+                                url="https://t.me/xD_Zent",              
                             ),
                         ],
                     ]
@@ -247,7 +246,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-            SuzuneBotG_IMG,
+            VanitasBotG_IMG,
             G_START_TEXT.format(uptime),
         )
 
@@ -574,7 +573,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1100735944 and DONATION_LINK:
+        if OWNER_ID != 5176432397 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
