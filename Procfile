@@ -1,3 +1,3 @@
-worker: python3 -m SuzuneBot
-web: python3 -m SuzuneBot
+worker: python3 -m VanitasBot
+web: python3 -m VanitasBot
 ps:scale worker=1
