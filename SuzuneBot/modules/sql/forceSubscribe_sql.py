@@ -16,7 +16,7 @@
 
 from sqlalchemy import Column, Numeric, String
 
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot.modules.sql import BASE, SESSION
 
 
 class forceSubscribe(BASE):
