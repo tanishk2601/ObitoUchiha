@@ -1,6 +1,6 @@
-import SuzuneBot.modules.sql.blacklistusers_sql as sql
-from SuzuneBot import ALLOW_EXCL
-from SuzuneBot import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
+import VanitasBot.modules.sql.blacklistusers_sql as sql
+from VanitasBot import ALLOW_EXCL
+from VanitasBot import DEV_USERS, DRAGONS, DEMONS, TIGERS, WOLVES
 
 from telegram import Update
 from telegram.ext import CommandHandler, MessageHandler, RegexHandler, Filters
