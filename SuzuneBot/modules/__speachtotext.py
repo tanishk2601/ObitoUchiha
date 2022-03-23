@@ -1,4 +1,4 @@
-from SuzuneBot import telethn as tbot
+from VanitasBot import telethn as tbot
 import os
 import urllib.request
 from datetime import datetime
@@ -11,8 +11,8 @@ from telethon.tl import functions
 from telethon.tl import types
 from telethon.tl.types import *
 
-from SuzuneBot import *
-from SuzuneBot.events import register
+from VanitasBot import *
+from VanitasBot.events import register
 
 
 async def is_register_admin(chat, user):
