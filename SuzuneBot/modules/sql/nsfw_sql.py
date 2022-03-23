@@ -1,6 +1,6 @@
 import threading
 from sqlalchemy import Column, String
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot.modules.sql import BASE, SESSION
 
 #   |----------------------------------|
 #   |  Test Module by @EverythingSuckz |
