@@ -2,8 +2,8 @@ import threading
 
 from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
 
-from SuzuneBot.modules.helper_funcs.msg_types import Types
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot.modules.helper_funcs.msg_types import Types
+from VanitasBot.modules.sql import BASE, SESSION
 
 
 class CustomFilters(BASE):
