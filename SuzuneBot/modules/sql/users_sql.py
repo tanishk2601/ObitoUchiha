@@ -1,7 +1,7 @@
 import threading
 
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot import dispatcher
+from VanitasBot.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
