@@ -1,7 +1,7 @@
 import threading
 
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot import dispatcher
+from VanitasBot.modules.sql import BASE, SESSION
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
 from telegram.error import BadRequest, Unauthorized
 
