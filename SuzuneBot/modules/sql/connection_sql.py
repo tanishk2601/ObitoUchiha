@@ -4,7 +4,7 @@ from typing import Union
 
 from sqlalchemy import Column, String, Boolean, UnicodeText, Integer
 
-from SuzuneBot.modules.sql import SESSION, BASE
+from VanitasBot.modules.sql import SESSION, BASE
 
 
 class ChatAccessConnectionSettings(BASE):
