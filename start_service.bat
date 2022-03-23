@@ -27,5 +27,5 @@ if '%errorlevel%' NEQ '0' (
 :--------------------------------------
 :: your commands begin from this point.
 :: stops the service and then starts it 
-net stop SuzuneBot
-net start SuzuneBot
+net stop VanitasBot
+net start VanitasBot
