@@ -1,5 +1,5 @@
 from sqlalchemy import Boolean, Column, Integer, String, UnicodeText
-from SuzuneBot.modules.sql import BASE, SESSION
+from VanitasBot.modules.sql import BASE, SESSION
 
 
 class Nightmode(BASE):
