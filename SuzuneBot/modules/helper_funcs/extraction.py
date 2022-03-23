@@ -1,7 +1,7 @@
 from typing import List, Optional
 
-from SuzuneBot import LOGGER
-from SuzuneBot.modules.users import get_user_id
+from VanitasBot import LOGGER
+from VanitasBot.modules.users import get_user_id
 from telegram import Message, MessageEntity
 from telegram.error import BadRequest
 
