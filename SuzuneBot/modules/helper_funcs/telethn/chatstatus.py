@@ -1,5 +1,5 @@
-from SuzuneBot.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
-from SuzuneBot import DRAGONS
+from VanitasBot.modules.helper_funcs.telethn import IMMUNE_USERS, telethn
+from VanitasBot import DRAGONS
 from telethon.tl.types import ChannelParticipantsAdmins
 
 
@@ -42,9 +42,9 @@ async def is_user_admin(user_id: int, chat_id):
     return status
 
 
-async def SuzuneBot_is_admin(chat_id: int):
+async def VanitasBot_is_admin(chat_id: int):
     status = False
-    SuzuneBot = await telethn.get_me()
+    VanitasBot = await telethn.get_me()
     async for user in telethn.iter_participants(
         chat_id, filter=ChannelParticipantsAdmins
     ):
