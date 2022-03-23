@@ -4,7 +4,7 @@ import os
 
 
 def get_user_list(config, key):
-    with open("{}/SuzuneBot/{}".format(os.getcwd(), config), "r") as json_file:
+    with open("{}/VanitasBot/{}".format(os.getcwd(), config), "r") as json_file:
         return json.load(json_file)[key]
 
 
