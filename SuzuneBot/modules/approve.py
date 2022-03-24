@@ -1,11 +1,11 @@
 import html
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
-from SuzuneBot import dispatcher, DRAGONS
-from SuzuneBot.modules.helper_funcs.extraction import extract_user
+from VanitasBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot import dispatcher, DRAGONS
+from VanitasBot.modules.helper_funcs.extraction import extract_user
 from telegram.ext import CallbackContext, run_async, CallbackQueryHandler
-import SuzuneBot.modules.sql.approve_sql as sql
-from SuzuneBot.modules.helper_funcs.chat_status import user_admin
-from SuzuneBot.modules.log_channel import loggable
+import VanitasBot.modules.sql.approve_sql as sql
+from VanitasBot.modules.helper_funcs.chat_status import user_admin
+from VanitasBot.modules.log_channel import loggable
 from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Update
 from telegram.utils.helpers import mention_html
 from telegram.error import BadRequest
