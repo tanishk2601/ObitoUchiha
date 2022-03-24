@@ -5,8 +5,8 @@ import textwrap
 import bs4
 import jikanpy
 import requests
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot import dispatcher
+from VanitasBot.modules.disable import DisableAbleCommandHandler
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackContext, run_async
 
