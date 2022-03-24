@@ -6,18 +6,18 @@ from telegram.error import BadRequest
 from telegram.ext import CommandHandler, MessageHandler, Filters, run_async
 from telegram.utils.helpers import mention_html
 
-import SuzuneBot.modules.sql.blacklist_sql as sql
-from SuzuneBot import dispatcher, LOGGER
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
-from SuzuneBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from SuzuneBot.modules.helper_funcs.extraction import extract_text
-from SuzuneBot.modules.helper_funcs.misc import split_message
-from SuzuneBot.modules.log_channel import loggable
-from SuzuneBot.modules.warns import warn
-from SuzuneBot.modules.helper_funcs.string_handling import extract_time
-from SuzuneBot.modules.connection import connected
-from SuzuneBot.modules.sql.approve_sql import is_approved
-from SuzuneBot.modules.helper_funcs.alternate import send_message, typing_action
+import VanitasBot.modules.sql.blacklist_sql as sql
+from VanitasBot import dispatcher, LOGGER
+from VanitasBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from VanitasBot.modules.helper_funcs.extraction import extract_text
+from VanitasBot.modules.helper_funcs.misc import split_message
+from VanitasBot.modules.log_channel import loggable
+from VanitasBot.modules.warns import warn
+from VanitasBot.modules.helper_funcs.string_handling import extract_time
+from VanitasBot.modules.connection import connected
+from VanitasBot.modules.sql.approve_sql import is_approved
+from VanitasBot.modules.helper_funcs.alternate import send_message, typing_action
 
 BLACKLIST_GROUP = 11
 
