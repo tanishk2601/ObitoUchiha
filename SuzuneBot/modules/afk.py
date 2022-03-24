@@ -5,8 +5,8 @@ from VanitasBot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
-from SuzuneBot.modules.sql import afk_sql as sql
-from SuzuneBot.modules.users import get_user_id
+from VanitasBot.modules.sql import afk_sql as sql
+from VanitasBot.modules.users import get_user_id
 from telegram import MessageEntity, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, Filters, MessageHandler, run_async
