@@ -1,17 +1,17 @@
 import html
 from typing import Optional
 
-import SuzuneBot.modules.sql.blsticker_sql as sql
-from SuzuneBot import LOGGER, dispatcher
-from SuzuneBot.modules.connection import connected
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
-from SuzuneBot.modules.helper_funcs.alternate import send_message
-from SuzuneBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
-from SuzuneBot.modules.helper_funcs.misc import split_message
-from SuzuneBot.modules.helper_funcs.string_handling import extract_time
+import VanitasBot.modules.sql.blsticker_sql as sql
+from VanitasBot import LOGGER, dispatcher
+from VanitasBot.modules.connection import connected
+from VanitasBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot.modules.helper_funcs.alternate import send_message
+from VanitasBot.modules.helper_funcs.chat_status import user_admin, user_not_admin
+from VanitasBot.modules.helper_funcs.misc import split_message
+from VanitasBot.modules.helper_funcs.string_handling import extract_time
 
-from SuzuneBot.modules.log_channel import loggable
-from SuzuneBot.modules.warns import warn
+from VanitasBot.modules.log_channel import loggable
+from VanitasBot.modules.warns import warn
 from telegram import Chat, Message, ParseMode, Update, User, ChatPermissions
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, Filters, MessageHandler
