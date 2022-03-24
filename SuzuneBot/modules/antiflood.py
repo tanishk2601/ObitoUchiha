@@ -4,15 +4,15 @@ import re
 
 from telegram import Message, Chat, Update, User, ChatPermissions
 
-from SuzuneBot import TIGERS, WOLVES, dispatcher
-from SuzuneBot.modules.helper_funcs.chat_status import (
+from VanitasBot import TIGERS, WOLVES, dispatcher
+from VanitasBot.modules.helper_funcs.chat_status import (
     bot_admin,
     is_user_admin,
     user_admin,
     user_admin_no_reply,
 )
-from SuzuneBot.modules.log_channel import loggable
-from SuzuneBot.modules.sql import antiflood_sql as sql
+from VanitasBot.modules.log_channel import loggable
+from VanitasBot.modules.sql import antiflood_sql as sql
 from telegram.error import BadRequest
 from telegram.ext import (
     CallbackContext,
@@ -23,10 +23,10 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import mention_html, escape_markdown
-from SuzuneBot.modules.helper_funcs.string_handling import extract_time
-from SuzuneBot.modules.connection import connected
-from SuzuneBot.modules.helper_funcs.alternate import send_message
-from SuzuneBot.modules.sql.approve_sql import is_approved
+from VanitasBot.modules.helper_funcs.string_handling import extract_time
+from VanitasBot.modules.connection import connected
+from VanitasBot.modules.helper_funcs.alternate import send_message
+from VanitasBot.modules.sql.approve_sql import is_approved
 
 FLOOD_GROUP = 3
 
