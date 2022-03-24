@@ -5,23 +5,23 @@ from telegram import ParseMode, Message
 from telegram.error import BadRequest
 from telegram.ext import CommandHandler, run_async
 
-import SuzuneBot.modules.sql.notes_sql as sql
-from SuzuneBot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
-from SuzuneBot.__main__ import DATA_IMPORT
-from SuzuneBot.modules.helper_funcs.chat_status import user_admin
-from SuzuneBot.modules.helper_funcs.alternate import typing_action
+import VanitasBot.modules.sql.notes_sql as sql
+from VanitasBot import dispatcher, LOGGER, OWNER_ID, JOIN_LOGGER, SUPPORT_CHAT
+from VanitasBot.__main__ import DATA_IMPORT
+from VanitasBot.modules.helper_funcs.chat_status import user_admin
+from VanitasBot.modules.helper_funcs.alternate import typing_action
 
-# from SuzuneBot.modules.rules import get_rules
-import SuzuneBot.modules.sql.rules_sql as rulessql
+# from VanitasBot.modules.rules import get_rules
+import VanitasBot.modules.sql.rules_sql as rulessql
 
-# from SuzuneBot.modules.sql import warns_sql as warnssql
-import SuzuneBot.modules.sql.blacklist_sql as blacklistsql
-from SuzuneBot.modules.sql import disable_sql as disabledsql
+# from VanitasBot.modules.sql import warns_sql as warnssql
+import VanitasBot.modules.sql.blacklist_sql as blacklistsql
+from VanitasBot.modules.sql import disable_sql as disabledsql
 
-# from SuzuneBot.modules.sql import cust_filters_sql as filtersql
-# import SuzuneBot.modules.sql.welcome_sql as welcsql
-import SuzuneBot.modules.sql.locks_sql as locksql
-from SuzuneBot.modules.connection import connected
+# from VanitasBot.modules.sql import cust_filters_sql as filtersql
+# import VanitasBot.modules.sql.welcome_sql as welcsql
+import VanitasBot.modules.sql.locks_sql as locksql
+from VanitasBot.modules.connection import connected
 
 
 @run_async
