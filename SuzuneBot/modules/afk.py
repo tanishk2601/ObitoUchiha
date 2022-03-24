@@ -1,7 +1,7 @@
 import random, html
 
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.disable import (
+from VanitasBot import dispatcher
+from VanitasBot.modules.disable import (
     DisableAbleCommandHandler,
     DisableAbleMessageHandler,
 )
