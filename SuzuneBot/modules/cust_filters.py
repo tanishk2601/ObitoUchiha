@@ -15,25 +15,25 @@ from telegram.ext import (
 )
 from telegram.utils.helpers import mention_html, escape_markdown
 
-from SuzuneBot import dispatcher, LOGGER, DRAGONS
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
-from SuzuneBot.modules.helper_funcs.handlers import MessageHandlerChecker
-from SuzuneBot.modules.helper_funcs.chat_status import user_admin
-from SuzuneBot.modules.helper_funcs.extraction import extract_text
-from SuzuneBot.modules.helper_funcs.filters import CustomFilters
-from SuzuneBot.modules.helper_funcs.misc import build_keyboard_parser
-from SuzuneBot.modules.helper_funcs.msg_types import get_filter_type
-from SuzuneBot.modules.helper_funcs.string_handling import (
+from VanitasBot import dispatcher, LOGGER, DRAGONS
+from VanitasBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot.modules.helper_funcs.handlers import MessageHandlerChecker
+from VanitasBot.modules.helper_funcs.chat_status import user_admin
+from VanitasBot.modules.helper_funcs.extraction import extract_text
+from VanitasBot.modules.helper_funcs.filters import CustomFilters
+from VanitasBot.modules.helper_funcs.misc import build_keyboard_parser
+from VanitasBot.modules.helper_funcs.msg_types import get_filter_type
+from VanitasBot.modules.helper_funcs.string_handling import (
     split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
 )
-from SuzuneBot.modules.sql import cust_filters_sql as sql
+from VanitasBot.modules.sql import cust_filters_sql as sql
 
-from SuzuneBot.modules.connection import connected
+from VanitasBot.modules.connection import connected
 
-from SuzuneBot.modules.helper_funcs.alternate import send_message, typing_action
+from VanitasBot.modules.helper_funcs.alternate import send_message, typing_action
 
 HANDLER_GROUP = 10
 
