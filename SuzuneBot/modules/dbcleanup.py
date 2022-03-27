@@ -1,9 +1,9 @@
 from time import sleep
 
-import SuzuneBot.modules.sql.global_bans_sql as gban_sql
-import SuzuneBot.modules.sql.users_sql as user_sql
-from SuzuneBot import DEV_USERS, OWNER_ID, dispatcher
-from SuzuneBot.modules.helper_funcs.chat_status import dev_plus
+import VanitasBot.modules.sql.global_bans_sql as gban_sql
+import VanitasBot.modules.sql.users_sql as user_sql
+from VanitasBot import DEV_USERS, OWNER_ID, dispatcher
+from VanitasBot.modules.helper_funcs.chat_status import dev_plus
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import (
