@@ -5,10 +5,10 @@ from telegram import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton, Upda
 from telegram.error import BadRequest, Unauthorized
 from telegram.ext import CommandHandler, CallbackQueryHandler, run_async
 
-import SuzuneBot.modules.sql.connection_sql as sql
-from SuzuneBot import dispatcher, DRAGONS, DEV_USERS
-from SuzuneBot.modules.helper_funcs import chat_status
-from SuzuneBot.modules.helper_funcs.alternate import send_message, typing_action
+import VanitasBot.modules.sql.connection_sql as sql
+from VanitasBot import dispatcher, DRAGONS, DEV_USERS
+from VanitasBot.modules.helper_funcs import chat_status
+from VanitasBot.modules.helper_funcs.alternate import send_message, typing_action
 
 user_admin = chat_status.user_admin
 
