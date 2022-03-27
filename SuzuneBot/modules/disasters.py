@@ -3,7 +3,7 @@ import json
 import os
 from typing import Optional
 
-from SuzuneBot import (
+from VanitasBot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -13,13 +13,13 @@ from SuzuneBot import (
     WOLVES,
     dispatcher,
 )
-from SuzuneBot.modules.helper_funcs.chat_status import (
+from VanitasBot.modules.helper_funcs.chat_status import (
     dev_plus,
     sudo_plus,
     whitelist_plus,
 )
-from SuzuneBot.modules.helper_funcs.extraction import extract_user
-from SuzuneBot.modules.log_channel import gloggable
+from VanitasBot.modules.helper_funcs.extraction import extract_user
+from VanitasBot.modules.log_channel import gloggable
 from telegram import ParseMode, TelegramError, Update
 from telegram.ext import CallbackContext, CommandHandler, run_async
 from telegram.utils.helpers import mention_html
@@ -155,7 +155,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Demon Disaster!"
+        rt + f"\n{user_member.first_name} was added as a Crimson Moon Clan Disaster!"
     )
 
     log_message = (
