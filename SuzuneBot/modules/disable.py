@@ -2,9 +2,9 @@ import importlib
 from typing import Union
 
 from future.utils import string_types
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
-from SuzuneBot.modules.helper_funcs.misc import is_module_loaded
+from VanitasBot import dispatcher
+from VanitasBot.modules.helper_funcs.handlers import CMD_STARTERS, SpamChecker
+from VanitasBot.modules.helper_funcs.misc import is_module_loaded
 from telegram import ParseMode, Update
 from telegram.ext import (
     CallbackContext,
@@ -20,12 +20,12 @@ FILENAME = __name__.rsplit(".", 1)[-1]
 # If module is due to be loaded, then setup all the magical handlers
 if is_module_loaded(FILENAME):
 
-    from SuzuneBot.modules.helper_funcs.chat_status import (
+    from VanitasBot.modules.helper_funcs.chat_status import (
         connection_status,
         is_user_admin,
         user_admin,
     )
-    from SuzuneBot.modules.sql import disable_sql as sql
+    from VanitasBot.modules.sql import disable_sql as sql
     from telegram.ext.dispatcher import run_async
 
     DISABLE_CMDS = []
@@ -235,7 +235,7 @@ if is_module_loaded(FILENAME):
         chat = update.effective_chat
 
         if len(args) >= 1:
-            enable_module = "SuzuneBot.modules." + args[0].rsplit(".", 1)[0]
+            enable_module = "VanitasBot.modules." + args[0].rsplit(".", 1)[0]
 
             try:
                 module = importlib.import_module(enable_module)
