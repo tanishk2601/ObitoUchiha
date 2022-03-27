@@ -1,7 +1,7 @@
 from telegram import ParseMode
 
-from SuzuneBot import dispatcher
-from SuzuneBot.modules.disable import DisableAbleCommandHandler
+from VanitasBot import dispatcher
+from VanitasBot.modules.disable import DisableAbleCommandHandler
 
 normiefont = [
     "a",
