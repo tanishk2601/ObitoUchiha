@@ -1,7 +1,7 @@
 # Module to blacklist users and prevent them from using commands by @TheRealPhoenix
 import html
-import SuzuneBot.modules.sql.blacklistusers_sql as sql
-from SuzuneBot import (
+import VanitasBot.modules.sql.blacklistusers_sql as sql
+from VanitasBot import (
     DEV_USERS,
     OWNER_ID,
     DRAGONS,
@@ -10,12 +10,12 @@ from SuzuneBot import (
     WOLVES,
     dispatcher,
 )
-from SuzuneBot.modules.helper_funcs.chat_status import dev_plus
-from SuzuneBot.modules.helper_funcs.extraction import (
+from VanitasBot.modules.helper_funcs.chat_status import dev_plus
+from VanitasBot.modules.helper_funcs.extraction import (
     extract_user,
     extract_user_and_text,
 )
-from SuzuneBot.modules.log_channel import gloggable
+from VanitasBot.modules.log_channel import gloggable
 from telegram import ParseMode, Update
 from telegram.error import BadRequest
 from telegram.ext import CallbackContext, CommandHandler, run_async
