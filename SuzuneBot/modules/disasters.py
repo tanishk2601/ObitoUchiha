@@ -306,7 +306,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in JONINS:
+    if user_id in JONIN:
         message.reply_text("Requested to demote this user to Normal Civilian")
         JONIN.remove(user_id)
         data["sudos"].remove(user_id)
@@ -349,9 +349,9 @@ def removesupport(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DEMONS:
+    if user_id in CHUNIN:
         message.reply_text("Requested to demote this person to Normal Civilian")
-        DEMONS.remove(user_id)
+        CHUNIN.remove(user_id)
         data["supports"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -392,9 +392,9 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in WOLVES:
+    if user_id in CHUNIN:
         message.reply_text("Demoting to normal user")
-        WOLVES.remove(user_id)
+        CHUNIN.remove(user_id)
         data["whitelists"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -434,9 +434,9 @@ def removetiger(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in TIGERS:
+    if user_id in GENIN:
         message.reply_text("Demoting to normal user")
-        TIGERS.remove(user_id)
+        GENIN.remove(user_id)
         data["tigers"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -460,12 +460,12 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 @run_async
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Curse Bearer:</b>\n"
+    reply = "<b>Known Trainee:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
     bot = context.bot
-    for each_user in WOLVES:
+    for each_user in TRAINEE:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
@@ -479,12 +479,12 @@ def whitelistlist(update: Update, context: CallbackContext):
 @run_async
 @whitelist_plus
 def tigerlist(update: Update, context: CallbackContext):
-    reply = "<b>Known Blue Moon Clan:</b>\n"
+    reply = "<b>Known Genin:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
     bot = context.bot
-    for each_user in TIGERS:
+    for each_user in GENIN:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
@@ -502,7 +502,7 @@ def supportlist(update: Update, context: CallbackContext):
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
     reply = "<b>Known Crimson Moon:</b>\n"
-    for each_user in CHUNINS:
+    for each_user in CHUNIN:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
