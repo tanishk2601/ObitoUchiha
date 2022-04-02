@@ -1,8 +1,8 @@
 {
-    "god": [],
-    "chunin": [],
-    "trainee": [],
-    "jonin": [],
-    "genin": [],
+    "devs": [],
+    "supports": [],
+    "whitelists": [],
+    "sudos": [],
+    "tigers": [],
     "spammers": []
 }
