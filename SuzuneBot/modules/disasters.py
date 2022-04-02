@@ -4,13 +4,13 @@ import os
 from typing import Optional
 
 from VanitasBot import (
-    DEV_USERS,
-    OWNER_ID,
-    DRAGONS,
+    GOD,
+    HOKAGE,
+    JONIN,
     SUPPORT_CHAT,
-    DEMONS,
-    TIGERS,
-    WOLVES,
+    CHUNIN,
+    GENIN,
+    TRAINEE,
     dispatcher,
 )
 from VanitasBot.modules.helper_funcs.chat_status import (
