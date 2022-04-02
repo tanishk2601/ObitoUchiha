@@ -266,7 +266,7 @@ def addtiger(update: Update, context: CallbackContext) -> str:
         return ""
 
     data["tigers"].append(user_id)
-    TIGERS.append(user_id)
+    GENIN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
@@ -306,9 +306,9 @@ def removesudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
+    if user_id in JONINS:
         message.reply_text("Requested to demote this user to Normal Civilian")
-        DRAGONS.remove(user_id)
+        JONIN.remove(user_id)
         data["sudos"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
