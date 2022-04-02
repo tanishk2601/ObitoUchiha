@@ -72,29 +72,29 @@ def addsudo(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        message.reply_text("This member is already a HellFire Witch")
+    if user_id in JONIN:
+        message.reply_text("This member is already a Anbu Ops")
         return ""
 
-    if user_id in DEMONS:
-        rt += "Requested to promote this user to Crimson Moon Clan."
+    if user_id in CHUNIN:
+        rt += "Requested to promote this user to Chunin branch."
         data["supports"].remove(user_id)
-        DEMONS.remove(user_id)
+        CHUNIN.remove(user_id)
 
-    if user_id in WOLVES:
-        rt += "Requested to promote this user to Curse Bearers."
+    if user_id in TRAINEE:
+        rt += "Requested to promote this user to Trainee."
         data["whitelists"].remove(user_id)
-        WOLVES.remove(user_id)
+        TRAINEE.remove(user_id)
 
     data["sudos"].append(user_id)
-    DRAGONS.append(user_id)
+    JONIN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
         rt
-        + "\nSuccessfully set Disaster level of {} to HellFire Witch!".format(
+        + "\nSuccessfully set Disaster level of {} to Jonin!".format(
             user_member.first_name
         )
     )
@@ -134,22 +134,22 @@ def addsupport(
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        rt += "Requested to demote this user from HellFire Witch to Crimson Moon Clan"
+    if user_id in JONIN:
+        rt += "Requested to demote this user from Jonin to chunin"
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        JONIN.remove(user_id)
 
-    if user_id in DEMONS:
-        message.reply_text("This user is already a Crimson Moon Clan.")
+    if user_id in CHUNIN:
+        message.reply_text("This user is already a Chunin.")
         return ""
 
-    if user_id in WOLVES:
-        rt += "Requested to Promote Curse Bearers to Crimson Moon Clan
+    if user_id in TRAINEE:
+        rt += "Requested to Promote Trainee to Genin"
         data["whitelists"].remove(user_id)
-        WOLVES.remove(user_id)
+        TRAINEE.remove(user_id)
 
     data["supports"].append(user_id)
-    DEMONS.append(user_id)
+    CHUNIN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
@@ -190,28 +190,28 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        rt += "This person is HellFire Witch demoting to Curse Bearers."
+    if user_id in JONIN:
+        rt += "This person is Jonin demoting to Trainee."
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        JONIN.remove(user_id)
 
-    if user_id in DEMONS:
-        rt += "This person is Crimson Moon Clan demoting to Curse Bearers."
+    if user_id in CHUNIN:
+        rt += "This person is Chunin demoting to Trainee."
         data["supports"].remove(user_id)
-        DEMONS.remove(user_id)
+        CHUNIN.remove(user_id)
 
-    if user_id in WOLVES:
-        message.reply_text("This user is already a Curse Bearer.")
+    if user_id in TRAINEE:
+        message.reply_text("This user is already a Trainee.")
         return ""
 
     data["whitelists"].append(user_id)
-    WOLVES.append(user_id)
+    Trainee.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Curse Bearer!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to a Trainee!"
     )
 
     log_message = (
@@ -246,33 +246,33 @@ def addtiger(update: Update, context: CallbackContext) -> str:
     with open(ELEVATED_USERS_FILE, "r") as infile:
         data = json.load(infile)
 
-    if user_id in DRAGONS:
-        rt += "This member is a HellFire Witch, Demoting to Blue Moon Clan."
+    if user_id in JONIN:
+        rt += "This member is a Jonin demoting him to Genin."
         data["sudos"].remove(user_id)
-        DRAGONS.remove(user_id)
+        JONIN.remove(user_id)
 
-    if user_id in DEMONS:
-        rt += "This user is already a Crimson Moon Clan, Demoting to Blue Moon Clan."
+    if user_id in CHUNIN:
+        rt += "This user is a Chunin demoting him to Genin."
         data["supports"].remove(user_id)
-        DEMONS.remove(user_id)
+        CHUNIN.remove(user_id)
 
-    if user_id in WOLVES:
-        rt += "This user is already a Curse Bearer, Demoting to Blue Moon Clan."
+    if user_id in TRAINEE:
+        rt += "This user is a Trainee demoting him to Genin."
         data["whitelists"].remove(user_id)
-        WOLVES.remove(user_id)
+        TRAINEE.remove(user_id)
 
-    if user_id in TIGERS:
-        message.reply_text("This user is already a Blue Moon Clan.")
+    if user_id in GENIN:
+        message.reply_text("This user is already a GENIN.")
         return ""
 
-    data["tigers"].append(user_id)
+    data["genin"].append(user_id)
     TIGERS.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully promoted {user_member.first_name} to a Blue Moon Clan!"
+        rt + f"\nSuccessfully promoted {user_member.first_name} to a Genin!"
     )
 
     log_message = (
