@@ -78,15 +78,15 @@ def addsudo(update: Update, context: CallbackContext) -> str:
 
     if user_id in CHUNIN:
         rt += "Requested to promote this user to Chunin branch."
-        data["chunin"].remove(user_id)
+        data["supports"].remove(user_id)
         CHUNIN.remove(user_id)
 
     if user_id in TRAINEE:
         rt += "Requested to promote this user to Trainee."
-        data["trainee"].remove(user_id)
+        data["whitelists"].remove(user_id)
         TRAINEE.remove(user_id)
 
-    data["jonin"].append(user_id)
+    data["sudos"].append(user_id)
     JONIN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -136,7 +136,7 @@ def addsupport(
 
     if user_id in JONIN:
         rt += "Requested to demote this user from Jonin to chunin"
-        data["jonin"].remove(user_id)
+        data["sudos"].remove(user_id)
         JONIN.remove(user_id)
 
     if user_id in CHUNIN:
@@ -145,17 +145,17 @@ def addsupport(
 
     if user_id in TRAINEE:
         rt += "Requested to Promote Trainee to Genin"
-        data["traines"].remove(user_id)
+        data["whitelists"].remove(user_id)
         TRAINEE.remove(user_id)
 
-    data["chunin"].append(user_id)
+    data["supports"].append(user_id)
     CHUNIN.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Crimson Moon Clan Disaster!"
+        rt + f"\n{user_member.first_name} was added as a chunin!"
     )
 
     log_message = (
@@ -192,19 +192,19 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
 
     if user_id in JONIN:
         rt += "This person is Jonin demoting to Trainee."
-        data["jonin"].remove(user_id)
+        data["sudos"].remove(user_id)
         JONIN.remove(user_id)
 
     if user_id in CHUNIN:
         rt += "This person is Chunin demoting to Trainee."
-        data["chunin"].remove(user_id)
+        data["supports"].remove(user_id)
         CHUNIN.remove(user_id)
 
     if user_id in TRAINEE:
         message.reply_text("This user is already a Trainee.")
         return ""
 
-    data["trainee"].append(user_id)
+    data["whitelists"].append(user_id)
     Trainee.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -248,24 +248,24 @@ def addtiger(update: Update, context: CallbackContext) -> str:
 
     if user_id in JONIN:
         rt += "This member is a Jonin demoting him to Genin."
-        data["jonin"].remove(user_id)
+        data["sudos"].remove(user_id)
         JONIN.remove(user_id)
 
     if user_id in CHUNIN:
         rt += "This user is a Chunin demoting him to Genin."
-        data["chunin"].remove(user_id)
+        data["supports"].remove(user_id)
         CHUNIN.remove(user_id)
 
     if user_id in TRAINEE:
         rt += "This user is a Trainee demoting him to Genin."
-        data["trainee"].remove(user_id)
+        data["whitelists"].remove(user_id)
         TRAINEE.remove(user_id)
 
     if user_id in GENIN:
         message.reply_text("This user is already a GENIN.")
         return ""
 
-    data["genin"].append(user_id)
+    data["tigers"].append(user_id)
     TIGERS.append(user_id)
 
     with open(ELEVATED_USERS_FILE, "w") as outfile:
@@ -309,7 +309,7 @@ def removesudo(update: Update, context: CallbackContext) -> str:
     if user_id in DRAGONS:
         message.reply_text("Requested to demote this user to Normal Civilian")
         DRAGONS.remove(user_id)
-        data["jonin"].remove(user_id)
+        data["sudos"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
@@ -352,7 +352,7 @@ def removesupport(update: Update, context: CallbackContext) -> str:
     if user_id in DEMONS:
         message.reply_text("Requested to demote this person to Normal Civilian")
         DEMONS.remove(user_id)
-        data["chunin"].remove(user_id)
+        data["supports"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
@@ -395,7 +395,7 @@ def removewhitelist(update: Update, context: CallbackContext) -> str:
     if user_id in WOLVES:
         message.reply_text("Demoting to normal user")
         WOLVES.remove(user_id)
-        data["trainee"].remove(user_id)
+        data["whitelists"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
@@ -437,7 +437,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
     if user_id in TIGERS:
         message.reply_text("Demoting to normal user")
         TIGERS.remove(user_id)
-        data["genin"].remove(user_id)
+        data["tigers"].remove(user_id)
 
         with open(ELEVATED_USERS_FILE, "w") as outfile:
             json.dump(data, outfile, indent=4)
@@ -502,7 +502,7 @@ def supportlist(update: Update, context: CallbackContext):
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
     reply = "<b>Known Crimson Moon:</b>\n"
-    for each_user in DEMONS:
+    for each_user in CHUNINS:
         user_id = int(each_user)
         try:
             user = bot.get_chat(user_id)
@@ -519,8 +519,8 @@ def sudolist(update: Update, context: CallbackContext):
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>", parse_mode=ParseMode.HTML
     )
-    true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known HellFire Witch:</b>\n"
+    true_sudo = list(set(JONIN) - set(GOD))
+    reply = "<b>Known Jonin:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
